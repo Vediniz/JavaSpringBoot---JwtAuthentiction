@@ -32,3 +32,4 @@ build/
 /target
 ### VS Code ###
 .vscode/
+/.mvn/wrapper/maven-wrapper.properties
