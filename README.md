@@ -43,7 +43,7 @@ curl -X POST http://localhost:8080/api/login -H "Content-Type: application/json"
 }'
 ~~~
 
-### **Security & Authentication**
+#### **Security & Authentication**
 The application uses JWT (JSON Web Token) to secure endpoints. When a user logs in successfully, a token is generated and returned. This token should be included in the `Authorization` header as a Bearer token for subsequent requests to protected endpoints.
 
 Example:
