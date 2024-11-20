@@ -31,24 +31,15 @@ $ git clone git@github.com:Vediniz/JavaSpringBoot---JwtAuthentiction.git
 ## **Using the Application**
 Use the following `curl` commands to test the application's main endpoints.
 
-### **User Registration**
-This endpoint allows creating a new user.
-
-~~~bash
-curl -X POST http://localhost:8080/api/users -H "Content-Type: application/json" -d '{
-"username": "newuser",
-"password": "userpassword",
-"role": "USER"
-}'
-~~~
+Use the default administrator user to access the protected endpoints such as creating users. Then you will be able to create your own users.
 
 ### **User Login**
 This endpoint allows users to log in and receive a JWT token.
 
 ~~~bash
 curl -X POST http://localhost:8080/api/login -H "Content-Type: application/json" -d '{
-"username": "newuser",
-"password": "userpassword"
+"username": "admin",
+"password": "admin"
 }'
 ~~~
 
@@ -61,6 +52,18 @@ curl -X GET http://localhost:8080/api/me -H "Authorization: Bearer your_jwt_toke
 
 ### **Protected Endpoint Access (Admin Role)**
 This endpoint retrieves a paginated list of all users. Accessible only by users with the `ADMIN` role.
+
+
+### **User Registration**
+This endpoint allows creating a new user.
+
+~~~bash
+curl -X POST http://localhost:8080/api/users -H "Content-Type: application/json" -d '{
+"username": "admin",
+"password": "userpassword",
+"role": "USER"
+}'
+~~~
 
 ~~~bash
 curl -X GET http://localhost:8080/api/users/all?page=0&limit=10&sortBy=id&sortDir=asc -H "Authorization: Bearer your_jwt_token"
